@@ -6,13 +6,13 @@ from transformers import AutoProcessor, AutoModel
 from scipy.io.wavfile import write
 import torch
 
-model_name = 'suno/bark'
+MODEL_NAME= 'suno/bark'
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-processor = AutoProcessor.from_pretrained(pretrained_model_name_or_path=model_name)
+processor = AutoProcessor.from_pretrained(pretrained_model_name_or_path=MODEL_NAME)
 
-model = AutoModel.from_pretrained(pretrained_model_name_or_path=model_name)
+model = AutoModel.from_pretrained(pretrained_model_name_or_path=MODEL_NAME)
 model.to(DEVICE)
 
 def generate_audio(text:str, preset: str) -> None:
