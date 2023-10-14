@@ -1,6 +1,6 @@
 import gradio as gr
 
-from functions import generate_audio
+from function import generate_audio
 
 demo =  gr.Interface(
     fn=generate_audio,
