@@ -18,7 +18,8 @@ model.to(DEVICE)
 def generate_audio(text:str, preset: str) -> None:
     inputs = processor(text,voice_preset=preset,return_tensors='pt')
     inputs.to(DEVICE)
-    audio_array = model.generate(**inputs, do_sample=True)
+    audio_array = model.generate(**inputs, do_sample=
+    True)
     audio_array = audio_array.cpu().numpy().squeeze()
     sample_rate = model.generation_config.sample_rate
     file_id = uuid.uuid1()
